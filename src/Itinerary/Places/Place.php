@@ -8,7 +8,10 @@
 
 namespace Itinerary\Places;
 
-
+/**
+ * Class Place
+ * @package Itinerary\Places
+ */
 class Place
 {
     /**

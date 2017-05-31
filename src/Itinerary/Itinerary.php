@@ -14,6 +14,10 @@ use Itinerary\Cards\Collection;
 use Itinerary\Places\Place;
 use Itinerary\Transports\Transport;
 
+/**
+ * Class Itinerary
+ * @package Itinerary
+ */
 class Itinerary
 {
     protected $cards;

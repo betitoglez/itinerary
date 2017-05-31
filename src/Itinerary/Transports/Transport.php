@@ -8,7 +8,10 @@
 
 namespace Itinerary\Transports;
 
-
+/**
+ * Class Transport
+ * @package Itinerary\Transports
+ */
 abstract class Transport
 {
     protected $id;
