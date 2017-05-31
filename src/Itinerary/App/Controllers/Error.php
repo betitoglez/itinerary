@@ -35,6 +35,17 @@ class Error extends Controller
 
     public function main()
     {
-        $this->render('error');
+        http_response_code(501);
+
+        if ($this->request->isXmlHttpRequest()){
+            echo json_encode(
+                [
+                    'error' => $this->exception->getMessage()
+                ]
+            );
+        }else {
+            $this->render('error');
+        }
+
     }
 }

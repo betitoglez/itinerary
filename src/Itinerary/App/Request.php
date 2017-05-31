@@ -121,4 +121,12 @@ class Request
     {
             return (php_sapi_name() === 'cli');
     }
+
+    /**
+     * @return bool
+     */
+    public function isXmlHttpRequest() : bool
+    {
+        return isset($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) === 'xmlhttprequest';
+    }
 }

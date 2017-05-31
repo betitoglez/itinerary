@@ -11,6 +11,7 @@ namespace Itinerary;
 
 use Itinerary\App\Controllers\Console;
 use Itinerary\App\Controllers\Controller;
+use Itinerary\App\Controllers\Error;
 use Itinerary\App\Request;
 
 class Kernel
@@ -42,7 +43,6 @@ class Kernel
         }
 
 
-
         /**
          * @var Controller dynamic controller
          */
@@ -53,7 +53,10 @@ class Kernel
     }
 
     public function dispatchError(\Exception $error){
-
+        $oController = new Error();
+        $oController->setRequest($this->request);
+        $oController->setException($error);
+        $oController->main();
     }
 
     protected function _getControllerClassName ($sRoute)

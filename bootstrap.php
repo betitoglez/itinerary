@@ -3,8 +3,8 @@
 ini_set('display_errors',1);
 error_reporting(E_ALL);
 
-define('ROOT_PATH' , realpath(__DIR__));
-define('SRC_PATH' , realpath(__DIR__.'/src'));
+define('ROOT_PATH' , realpath(__DIR__) );
+define('SRC_PATH' , realpath(ROOT_PATH.'/src'));
 define('CONTROLLERS_PATH',SRC_PATH.'/Itinerary/App/Controllers');
 define('VIEW_PATH',SRC_PATH.'/views');
 

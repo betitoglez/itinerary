@@ -1,10 +1,205 @@
 <!DOCTYPE html>
-<html lang="en">
+<html dir="ltr" lang="en-US">
 <head>
-  <meta charset="UTF-8">
-  <title>Title</title>
+
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta name="author" content="Alberto"/>
+
+    <!-- Stylesheets
+    ============================================= -->
+    <link href="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic"
+          rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="css/bootstrap.css" type="text/css"/>
+    <link rel="stylesheet" href="css/style.css" type="text/css"/>
+    <link rel="stylesheet" href="css/dark.css" type="text/css"/>
+    <link rel="stylesheet" href="css/font-icons.css" type="text/css"/>
+    <link rel="stylesheet" href="css/animate.css" type="text/css"/>
+    <link rel="stylesheet" href="css/magnific-popup.css" type="text/css"/>
+
+    <!-- Select-Boxes CSS -->
+    <link rel="stylesheet" href="css/select-boxes.css" type="text/css"/>
+
+    <link rel="stylesheet" href="css/responsive.css" type="text/css"/>
+    <link rel="stylesheet" href="css/toast.css" type="text/css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <!-- Document Title
+    ============================================= -->
+    <title>Itinerary</title>
+
 </head>
-<body>
-    <h1>Hello</h1>
+
+<body class="stretched">
+
+<!-- Document Wrapper
+============================================= -->
+<div id="wrapper" class="clearfix">
+
+    <!-- Content
+    ============================================= -->
+    <section id="content">
+
+        <div class="content-wrap">
+
+            <div class="container center clearfix">
+
+                <div class="heading-block center">
+                    <h1>Welcome to Itinerary Generator</h1>
+                    <span>Try to add your custom unsorted cards!</span>
+                </div>
+
+                <h3>Add Card</h3>
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="nobottommargin clearfix">
+                            <form action="#" method="post" class="nobottommargin" name="frm-card">
+                                <div class="bottommargin-sm">
+                                    <label for="">Select Departure</label>
+                                    <select class="select-1 form-control" name="from" style="width:100%;">
+                                        <optgroup label="Cities">
+                                            <option value="Cities\Madrid">Madrid</option>
+                                            <option value="Cities\Barcelona">Barcelona</option>
+                                            <option value="Cities\London">London</option>
+                                            <option value="Cities\Dubai">Dubai</option>
+                                            <option value="Cities\Rome">Rome</option>
+                                        </optgroup>
+                                        <optgroup label="Sites">
+                                            <option value="Sites\EmpireState">Empire State</option>
+                                            <option value="Sites\GreatWall">Great Wall</option>
+                                        </optgroup>
+                                    </select>
+                                </div>
+
+                                <div class="bottommargin-sm">
+                                    <label for="">Select Arrival</label>
+                                    <select class="select-1 form-control" name="to" style="width:100%;">
+                                        <optgroup label="Cities">
+                                            <option value="Cities\Madrid">Madrid</option>
+                                            <option value="Cities\Barcelona" selected>Barcelona</option>
+                                            <option value="Cities\London">London</option>
+                                            <option value="Cities\Dubai">Dubai</option>
+                                            <option value="Cities\Rome">Rome</option>
+                                        </optgroup>
+                                        <optgroup label="Sites">
+                                            <option value="Sites\EmpireState">Empire State</option>
+                                            <option value="Sites\GreatWall">Great Wall</option>
+                                        </optgroup>
+                                    </select>
+                                </div>
+
+                                <div class="bottommargin-sm">
+                                    <label for="">Select Transport</label>
+                                    <select class="select-1 form-control" name="transport" style="width:100%;">
+                                        <optgroup label="Transports">
+                                            <option value="Airplane">Airplane</option>
+                                            <option value="Bus">Bus</option>
+                                            <option value="Car">Car</option>
+                                            <option value="Ship">Ship</option>
+                                        </optgroup>
+                                    </select>
+                                </div>
+
+                                <div class="col_full">
+                                    <label for="template-contactform-subject">
+                                        Seat / Cabin
+
+                                    </label>
+                                    <input id="template-contactform-subject" class="required sm-form-control"
+                                           name="seat" value="" aria-required="true"
+                                           type="text">
+                                </div>
+
+                                <div class="col_full">
+                                    <label for="template-contactform-message">Comment
+
+                                    </label>
+                                    <textarea class="sm-form-control" id="template-contactform-message"
+                                              name="comment" rows="6" cols="30"
+                                              aria-required="true"></textarea>
+                                </div>
+
+                                <div class="col_full">
+                                    <button class="button button-3d nomargin" type="submit" id="add-card-submit" name="template-contactform-submit" value="submit">Add Card</button>
+                                </div>
+
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>Pre View Request</h3>
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="nobottommargin clearfix">
+                            <form action="#" method="post" class="nobottommargin" id="generate-itinerary">
+
+                                <div class="col_full">
+                                    <label for="template-contactform-message">JSON Request
+                                        <small>*</small>
+                                    </label>
+                                    <textarea class="sm-form-control" id="request-pre"
+                                              name="request" rows="6" cols="30"
+                                              aria-required="true" readonly></textarea>
+                                </div>
+
+                                <div class="col_full">
+                                    <button class="button button-3d nomargin" type="submit" id="add-card-submit" name="template-contactform-submit" value="submit">Calculate Itinerary</button>
+                                </div>
+
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="panel panel-default" id="itinerary-panel">
+                    <div class="panel-body">
+                        <h3>Itinerary</h3>
+                        <ul class="process-steps bottommargin clearfix">
+
+                        </ul>
+                        <div class="col_full">
+                            <label for="template-contactform-message">JSON Response
+
+                            </label>
+                            <textarea class="sm-form-control" id="json-response"
+                                      name="json-response" rows="6" cols="30"
+                                      aria-required="true" readonly></textarea>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section><!-- #content end -->
+
+</div><!-- #wrapper end -->
+
+<!-- Go To Top
+============================================= -->
+<div id="gotoTop" class="icon-angle-up"></div>
+
+<!-- External JavaScripts
+============================================= -->
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/plugins.js"></script>
+<script type="text/javascript" src="js/functions.js"></script>
+
+<!-- Select-Boxes Plugin -->
+<script type="text/javascript" src="js/select-boxes.js"></script>
+
+<!-- Select-Splitter Plugin -->
+<script type="text/javascript" src="js/selectsplitter.js"></script>
+
+<script type="text/javascript" src="js/toast.js"></script>
+
+<script type="text/javascript" src="js/main.js"></script>
+
 </body>
 </html>
