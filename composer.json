@@ -1,0 +1,9 @@
+{
+  "require-dev": {
+    "phpunit/phpunit": "^6.1" ,
+    "phpdocumentor/phpdocumentor": "2.*"
+  },
+  "autoload": {
+    "psr-4": {"Itinerary\\": "src/Itinerary"}
+  }
+}

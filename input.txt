@@ -1,0 +1,25 @@
+[{
+    "from": "Sites\\EmpireState",
+    "to": "Sites\\GreatWall",
+    "transport": "Ship",
+    "seat": "1002",
+    "comment": "Nice cruise"
+}, {
+    "from": "Cities\\London",
+    "to": "Sites\\EmpireState",
+    "transport": "Bus",
+    "seat": "14D",
+    "comment": "It is a really long trip..."
+}, {
+    "from": "Cities\\Rome",
+    "to": "Cities\\Barcelona",
+    "transport": "Car"
+}, {
+    "from": "Cities\\Madrid",
+    "to": "Cities\\London",
+    "transport": "Airplane"
+}, {
+    "from": "Sites\\GreatWall",
+    "to": "Cities\\Rome",
+    "transport": "Airplane"
+}]
