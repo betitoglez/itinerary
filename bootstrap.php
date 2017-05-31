@@ -8,4 +8,5 @@ define('SRC_PATH' , realpath(ROOT_PATH.'/src'));
 define('CONTROLLERS_PATH',SRC_PATH.'/Itinerary/App/Controllers');
 define('VIEW_PATH',SRC_PATH.'/views');
 
-require_once realpath(__DIR__ . '/vendor/autoload.php');
+if (file_exists(realpath(__DIR__ . '/vendor/autoload.php')))
+    require_once realpath(__DIR__ . '/vendor/autoload.php');
