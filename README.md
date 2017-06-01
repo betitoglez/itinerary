@@ -22,7 +22,7 @@ Working with PHP 7.1 we have some OOP features not available in older releases. 
 
 Basically because it is the latest stable version and it is compatible with PHP 7.1. [PHPUnit Official Web](https://phpunit.de/index.html "Offical Documentation")
 
-#Installing 
+# Installing 
 
 First of all let's download the project from GitHub
 
@@ -58,8 +58,33 @@ To do that just navigate to the public "www" folder and start the server there p
  php itinerary
  ```
  
+ ## Deploying with Apache
+ 
+ An Apache's Virtual Host is available within config folder. Furthermore, an .htaccess file is available in the document root. Note vHost file is customized to get the web working with PHP Fast CGI.
+ 
+ A Server Alias called "local.itinerary" is available, consider add this route in your local hosts file.
+ 
 # Documentation
 PHP Documentation is available within /www/doc folder. A LIVE doc is available also [here](http://itinerary.phphtmlfreelance.com/doc).
 
 # Live example
 A High Performance Demo Web is also availble at [itinerary.phphtmlfreelance.com](http://itinerary.phphtmlfreelance.com). This request will be handled by a Varnish HTTP Cache Server, and it will processed, if needed, by an Apache 2.4 Server with PHP-FPM 7.1. PHP Configuration is also available [here](http://itinerary.phphtmlfreelance.com/info.php)
+
+# Unit Tests
+
+A Test suite is available in "tests" folder. To run these tests consider using integrated PHPUnit 6.1 within composer installation.
+
+Change directory to root path and just type the following command.
+
+ ```shell
+ vendor/bin/phpunit
+ ```
+ 
+ # Sorting Algorithm
+ 
+ The main core of the application is the create function which located inside the "Itinerary" class which can be found in the path src/Itinerary/Itinerary.php .
+ 
+ This create function sorts all provided cards and it returns a sorted collection (if provided cards are valid).
+ 
+ The Algorithm is easy to interpret, first of all we loop over all provided cards to find out which is the first point (Departure Point).
+ Once we set the first point we create a recursive function to trace the complete itinerary. This recursive function is efficient since we remove already used cards fron the array.
