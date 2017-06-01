@@ -37,12 +37,14 @@ class Error extends Controller
     {
         http_response_code(501);
 
-        if ($this->request->isXmlHttpRequest()){
+        if ($this->request->isXmlHttpRequest()) {
             echo json_encode(
                 [
                     'error' => $this->exception->getMessage()
                 ]
             );
+        }else if ($this->request->isCli()){
+            die ("\033[31m ".$this->exception->getMessage()) . "\033[0m";
         }else {
             $this->render('error');
         }
